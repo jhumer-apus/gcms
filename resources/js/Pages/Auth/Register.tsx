@@ -8,7 +8,10 @@ import { FormEventHandler } from 'react';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: '',
+        first_name: '',
+        middle_name: '',
+        last_name: '',
+        username: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -28,20 +31,67 @@ export default function Register() {
 
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel htmlFor="name" value="Name" />
+                    <InputLabel htmlFor="first_name" value="First Name" />
 
                     <TextInput
-                        id="name"
-                        name="name"
-                        value={data.name}
+                        id="first_name"
+                        name="first_name"
+                        value={data.first_name}
                         className="mt-1 block w-full"
-                        autoComplete="name"
                         isFocused={true}
-                        onChange={(e) => setData('name', e.target.value)}
+                        onChange={(e) => setData('first_name', e.target.value)}
                         required
                     />
 
-                    <InputError message={errors.name} className="mt-2" />
+                    <InputError message={errors.first_name} className="mt-2" />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="middle_name" value="Middle Name" />
+
+                    <TextInput
+                        id="middle_name"
+                        name="middle_name"
+                        value={data.middle_name}
+                        className="mt-1 block w-full"
+                        isFocused={true}
+                        onChange={(e) => setData('middle_name', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.middle_name} className="mt-2" />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="last_name" value="Last Name" />
+
+                    <TextInput
+                        id="last_name"
+                        name="last_name"
+                        value={data.last_name}
+                        className="mt-1 block w-full"
+                        isFocused={true}
+                        onChange={(e) => setData('last_name', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.last_name} className="mt-2" />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="username" value="Username" />
+
+                    <TextInput
+                        id="username"
+                        name="username"
+                        value={data.username}
+                        className="mt-1 block w-full"
+                        isFocused={true}
+                        onChange={(e) => setData('username', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.username} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
