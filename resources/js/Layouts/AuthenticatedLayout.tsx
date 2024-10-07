@@ -24,6 +24,7 @@ export default function Authenticated({
                 <Header />
                 <main className='p-8'>
                     <BreadcrumbsNav />
+                    <br></br>
                     {children}
                 </main>
             </div>
